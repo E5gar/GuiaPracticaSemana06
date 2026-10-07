@@ -1,0 +1,92 @@
+.lista h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.lista-subtitulo {
+  margin: 6px 0 20px;
+  color: #5c5c6e;
+}
+
+.lista-buscador {
+  display: flex;
+  gap: 10px;
+  max-width: 480px;
+}
+
+.lista-buscador input {
+  flex: 1;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 2px solid #aac0e3;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.lista-buscador input:focus {
+  border-color: #8faed9;
+}
+
+.lista-buscador button {
+  padding: 10px 18px;
+  background: #ffd9b8;
+  border: 2px solid #f2bd92;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #3a3a4a;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+.lista-buscador button:hover {
+  transform: translateY(-2px);
+  border-color: #e09f6e;
+}
+
+.lista-contador {
+  margin: 14px 0 20px;
+  color: #5c5c6e;
+  font-size: 0.9rem;
+}
+
+.lista-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lista-vacia {
+  padding: 30px;
+  background: #ffe9b8;
+  border: 2px solid #f2d68f;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.lista-vacia p {
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .lista-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .lista h2 {
+    font-size: 1.6rem;
+  }
+
+  .lista-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .lista-buscador {
+    max-width: none;
+  }
+}
