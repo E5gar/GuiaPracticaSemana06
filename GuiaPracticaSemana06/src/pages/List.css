@@ -1,11 +1,16 @@
-.lista h2 {
-  margin: 0;
-  font-size: 2rem;
+.lista-cabecera {
+  padding: 46px 0 40px;
+  background: linear-gradient(135deg, var(--azul), var(--verde));
 }
 
-.lista-subtitulo {
-  margin: 6px 0 20px;
-  color: #5c5c6e;
+.lista-cabecera h2 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.lista-cabecera p {
+  margin: 6px 0 22px;
+  color: var(--suave);
 }
 
 .lista-buscador {
@@ -16,53 +21,58 @@
 
 .lista-buscador input {
   flex: 1;
-  padding: 10px 14px;
-  background: #ffffff;
-  border: 2px solid #aac0e3;
-  border-radius: 10px;
+  padding: 12px 18px;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
   font-size: 1rem;
   outline: none;
+  box-shadow: var(--sombra);
 }
 
 .lista-buscador input:focus {
-  border-color: #8faed9;
+  border-color: var(--azul-borde);
 }
 
 .lista-buscador button {
-  padding: 10px 18px;
-  background: #ffd9b8;
-  border: 2px solid #f2bd92;
-  border-radius: 10px;
-  font-weight: bold;
-  color: #3a3a4a;
+  padding: 12px 22px;
+  background: var(--primario);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 600;
   cursor: pointer;
-  transition:
-    transform 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s;
 }
 
 .lista-buscador button:hover {
-  transform: translateY(-2px);
-  border-color: #e09f6e;
+  background: var(--primario-oscuro);
+}
+
+.lista {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .lista-contador {
-  margin: 14px 0 20px;
-  color: #5c5c6e;
+  margin: 0 0 20px;
+  color: var(--suave);
   font-size: 0.9rem;
 }
 
 .lista-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
 }
 
 .lista-vacia {
-  padding: 30px;
-  background: #ffe9b8;
+  padding: 36px;
+  background: var(--amarillo);
   border: 2px solid #f2d68f;
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
 }
 
@@ -70,23 +80,16 @@
   margin: 0;
 }
 
-@media (max-width: 992px) {
-  .lista-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 600px) {
-  .lista h2 {
-    font-size: 1.6rem;
-  }
-
-  .lista-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  .lista-cabecera h2 {
+    font-size: 1.7rem;
   }
 
   .lista-buscador {
     max-width: none;
+  }
+
+  .lista-grid {
+    grid-template-columns: 1fr;
   }
 }
