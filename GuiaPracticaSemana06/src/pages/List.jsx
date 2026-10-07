@@ -17,41 +17,47 @@ function List() {
   const guiasFiltrados = data.filter((guia) => guia.address.city.toLowerCase().includes(termino));
 
   return (
-    <section className="lista">
-      <h2>Guías turísticos</h2>
-      <p className="lista-subtitulo">Elige a tu guía y reserva tu próxima aventura.</p>
+    <>
+      <section className="lista-cabecera">
+        <div className="contenedor">
+          <h2>Conoce a nuestros guías</h2>
+          <p>Profesionales locales que te acompañarán durante todo el recorrido.</p>
 
-      <div className="lista-buscador">
-        <input
-          type="text"
-          value={busqueda}
-          onChange={(e) => setBusqueda(e.target.value)}
-          placeholder="Buscar por ciudad"
-          aria-label="Buscar guías por ciudad"
-        />
-        {busqueda && (
-          <button type="button" onClick={() => setBusqueda('')}>
-            Limpiar
-          </button>
+          <div className="lista-buscador">
+            <input
+              type="text"
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+              placeholder="Buscar por ciudad"
+              aria-label="Buscar guías por ciudad"
+            />
+            {busqueda && (
+              <button type="button" onClick={() => setBusqueda('')}>
+                Limpiar
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="lista contenedor">
+        <p className="lista-contador">
+          Mostrando {guiasFiltrados.length} de {data.length} guías
+        </p>
+
+        {guiasFiltrados.length > 0 ? (
+          <div className="lista-grid">
+            {guiasFiltrados.map((guia) => (
+              <GuiaCard key={guia.id} guia={guia} />
+            ))}
+          </div>
+        ) : (
+          <div className="lista-vacia">
+            <p>No hay guías en esa ciudad.</p>
+          </div>
         )}
-      </div>
-
-      <p className="lista-contador">
-        Mostrando {guiasFiltrados.length} de {data.length} guías
-      </p>
-
-      {guiasFiltrados.length > 0 ? (
-        <div className="lista-grid">
-          {guiasFiltrados.map((guia) => (
-            <GuiaCard key={guia.id} guia={guia} />
-          ))}
-        </div>
-      ) : (
-        <div className="lista-vacia">
-          <p>No hay guías en esa ciudad.</p>
-        </div>
-      )}
-    </section>
+      </section>
+    </>
   );
 }
 
