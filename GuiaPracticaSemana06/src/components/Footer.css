@@ -13,6 +13,9 @@
 
 .pie-logo {
   margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: #fff;
   font-size: 1.2rem;
   font-weight: 700;

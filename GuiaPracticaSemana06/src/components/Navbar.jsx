@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
+import { Mountain } from 'lucide-react';
 
 const enlaces = [
   { to: '/', etiqueta: 'Inicio', end: true },
@@ -15,14 +16,14 @@ function claseDe(enlace, isActive) {
 function Navbar() {
   return (
     <>
-      <div className="topbar">
-        Cancelación gratis hasta en 48 h
-      </div>
+      <div className="topbar">Cancelación gratis hasta en 48 h</div>
 
       <header className="nav">
         <div className="nav-interior">
           <Link to="/" className="nav-logo">
-            <span className="nav-logo-icono">⛰️</span>
+            <span className="nav-logo-icono">
+              <Mountain size={20} />
+            </span>
             Andes Tour
           </Link>
 

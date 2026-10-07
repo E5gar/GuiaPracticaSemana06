@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Imagen from './Imagen.jsx';
 import { destinos } from '../data/destinos.js';
 import './GuiaCard.css';
+import { Star } from 'lucide-react';
 
 function iniciales(nombre) {
   return nombre
@@ -27,7 +28,9 @@ function GuiaCard({ guia }) {
 
       <h3>{guia.name}</h3>
       <p className="guia-card-especialidad">Especialista en {especialidad.nombre}</p>
-      <p className="guia-card-valoracion">⭐ {valoracion} · Guía certificado</p>
+      <p className="guia-card-valoracion">
+        <Star size={14} fill="currentColor" /> {valoracion} Guía certificado
+      </p>
 
       <ul className="guia-card-datos">
         <li>

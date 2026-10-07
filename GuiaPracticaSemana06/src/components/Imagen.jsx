@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import { Mountain } from 'lucide-react';
 
-function Imagen({ src, alt, className = '', fallback = '🏔️' }) {
+function Imagen({ src, alt, className = '', fallback = null }) {
   const [fallo, setFallo] = useState(false);
 
   if (fallo) {
     return (
       <div className={`imagen-fallo ${className}`} role="img" aria-label={alt}>
-        {fallback}
+        {fallback ?? <Mountain size={36} strokeWidth={1.6} />}
       </div>
     );
   }

@@ -42,6 +42,7 @@
   background: var(--naranja);
   border: 2px solid var(--naranja-borde);
   border-radius: 12px;
+  color: var(--primario-oscuro);
 }
 
 .nav-enlaces {

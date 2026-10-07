@@ -55,8 +55,15 @@
 
 .guia-card-valoracion {
   margin: 4px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: var(--suave);
   font-size: 0.82rem;
+}
+
+.guia-card-valoracion svg {
+  color: #f2a93b;
 }
 
 .guia-card-datos {

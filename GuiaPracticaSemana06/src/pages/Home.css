@@ -121,7 +121,16 @@
 }
 
 .ventaja-icono {
-  font-size: 1.8rem;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--naranja);
+  border: 2px solid var(--naranja-borde);
+  border-radius: 16px;
+  color: var(--primario-oscuro);
 }
 
 .seccion {

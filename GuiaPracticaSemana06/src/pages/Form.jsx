@@ -3,6 +3,7 @@ import ReservaForm from '../components/ReservaForm.jsx';
 import Imagen from '../components/Imagen.jsx';
 import { imagenReserva } from '../data/destinos.js';
 import './Form.css';
+import { Check } from 'lucide-react';
 
 const incluye = [
   'Guía local certificado',
@@ -29,7 +30,9 @@ function Form() {
           <h3>Tu reserva incluye</h3>
           <ul>
             {incluye.map((item) => (
-              <li key={item}>✔ {item}</li>
+              <li key={item}>
+                <Check size={16} strokeWidth={3} /> {item}
+              </li>
             ))}
           </ul>
         </div>

@@ -17,6 +17,7 @@
 .imagen-fallo {
   display: flex;
   align-items: center;
+  color: var(--suave);
   justify-content: center;
   font-size: 2.4rem;
   font-weight: 600;

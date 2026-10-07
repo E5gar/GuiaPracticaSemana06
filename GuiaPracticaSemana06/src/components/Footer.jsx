@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import { Mountain } from 'lucide-react';
 
 function Footer() {
   return (
     <footer className="pie">
       <div className="contenedor pie-grid">
         <div>
-          <p className="pie-logo">⛰️ Andes Tour</p>
+          <p className="pie-logo">
+            <Mountain size={20} /> Andes Tour
+          </p>
           <p className="pie-texto">
-            Tours por los Andes con guías locales certificados, grupos reducidos y reservas
-            seguras.
+            Tours por los Andes con guías locales certificados, grupos reducidos y reservas seguras.
           </p>
         </div>
 
@@ -27,7 +29,9 @@ function Footer() {
         </div>
       </div>
 
-      <p className="pie-copy">2026 Andes Tour. Desarrollo de aplicaciones web - IX Semestre - Gago Uribe Edgar Robert</p>
+      <p className="pie-copy">
+        2026 Andes Tour. Desarrollo de aplicaciones web - IX Semestre - Gago Uribe Edgar Robert
+      </p>
     </footer>
   );
 }

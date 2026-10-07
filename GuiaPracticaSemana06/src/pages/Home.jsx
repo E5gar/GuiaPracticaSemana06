@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Imagen from '../components/Imagen.jsx';
 import { destinos, imagenHero, imagenCta } from '../data/destinos.js';
 import './Home.css';
+import { Compass, Users, RefreshCw, MessageCircle } from 'lucide-react';
 
 const estadisticas = [
   { valor: '120+', texto: 'Tours realizados' },
@@ -10,10 +11,10 @@ const estadisticas = [
 ];
 
 const ventajas = [
-  { icono: '🧭', titulo: 'Guías locales', texto: 'Certificados y con años de experiencia' },
-  { icono: '👥', titulo: 'Grupos reducidos', texto: 'Máximo 20 personas por salida' },
-  { icono: '🔄', titulo: 'Cancelación flexible', texto: 'Gratis hasta 48 horas antes' },
-  { icono: '💬', titulo: 'Soporte cercano', texto: 'Atención de lunes a sábado' },
+  { icono: Compass, titulo: 'Guías locales', texto: 'Certificados y con años de experiencia' },
+  { icono: Users, titulo: 'Grupos reducidos', texto: 'Máximo 20 personas por salida' },
+  { icono: RefreshCw, titulo: 'Cancelación flexible', texto: 'Gratis hasta 48 horas antes' },
+  { icono: MessageCircle, titulo: 'Soporte cercano', texto: 'Atención de lunes a sábado' },
 ];
 
 const testimonios = [
@@ -73,11 +74,13 @@ function Home() {
 
       <section className="ventajas">
         <div className="contenedor ventajas-grid">
-          {ventajas.map((v) => (
-            <div key={v.titulo} className="ventaja">
-              <span className="ventaja-icono">{v.icono}</span>
-              <strong>{v.titulo}</strong>
-              <span>{v.texto}</span>
+          {ventajas.map(({ icono: Icono, titulo, texto }) => (
+            <div key={titulo} className="ventaja">
+              <span className="ventaja-icono">
+                <Icono size={26} strokeWidth={1.8} />
+              </span>
+              <strong>{titulo}</strong>
+              <span>{texto}</span>
             </div>
           ))}
         </div>
