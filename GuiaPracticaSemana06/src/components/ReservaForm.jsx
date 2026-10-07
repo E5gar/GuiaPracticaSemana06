@@ -260,7 +260,7 @@ function ReservaForm({ guia = '', destino = '' }) {
 
       <div className="reserva-sim">
         <p>
-          <strong>Modo de prueba:</strong> elige qué respuesta simular al enviar el formulario.
+          Simulación de respuesta al enviar el formulario
         </p>
         <div className="reserva-sim-botones">
           {simulaciones.map((s) => (
