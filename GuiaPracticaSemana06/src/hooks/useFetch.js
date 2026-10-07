@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-function mensajeDeError(err) {
+export function mensajeDeError(err) {
   if (err.response) {
     return `El servidor respondió con error ${err.response.status}.`;
   }
