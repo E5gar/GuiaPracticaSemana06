@@ -1,35 +1,47 @@
-import { NavLink } from 'react-router-dom'
-import './Navbar.css'
+import { Link, NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const enlaces = [
   { to: '/', etiqueta: 'Inicio', end: true },
   { to: '/guias', etiqueta: 'Guías turísticos' },
-  { to: '/reservar', etiqueta: 'Reservar tour' },
-]
+  { to: '/reservar', etiqueta: 'Reservar tour', cta: true },
+];
+
+function claseDe(enlace, isActive) {
+  if (enlace.cta) return isActive ? 'nav-cta nav-cta-activo' : 'nav-cta';
+  return isActive ? 'nav-link nav-link-activo' : 'nav-link';
+}
 
 function Navbar() {
   return (
-    <header className="nav">
-      <div className="nav-interior">
-        <span className="nav-logo">Andes Tour</span>
-
-        <nav className="nav-enlaces">
-          {enlaces.map((enlace) => (
-            <NavLink
-              key={enlace.to}
-              to={enlace.to}
-              end={enlace.end}
-              className={({ isActive }) =>
-                isActive ? 'nav-link nav-link-activo' : 'nav-link'
-              }
-            >
-              {enlace.etiqueta}
-            </NavLink>
-          ))}
-        </nav>
+    <>
+      <div className="topbar">
+        Cancelación gratis hasta en 48 h
       </div>
-    </header>
-  )
+
+      <header className="nav">
+        <div className="nav-interior">
+          <Link to="/" className="nav-logo">
+            <span className="nav-logo-icono">⛰️</span>
+            Andes Tour
+          </Link>
+
+          <nav className="nav-enlaces">
+            {enlaces.map((enlace) => (
+              <NavLink
+                key={enlace.to}
+                to={enlace.to}
+                end={enlace.end}
+                className={({ isActive }) => claseDe(enlace, isActive)}
+              >
+                {enlace.etiqueta}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+      </header>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;
