@@ -8,6 +8,70 @@
   box-shadow: var(--sombra);
 }
 
+.reserva-guia {
+  padding: 10px 14px;
+  background: #cdeed6;
+  border: 2px solid #a8d9b5;
+  border-radius: 10px;
+}
+
+.reserva-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reserva-campo label {
+  font-weight: bold;
+}
+
+.reserva-campo input,
+.reserva-campo select,
+.reserva-campo textarea {
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 2px solid #aac0e3;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #3a3a4a;
+  outline: none;
+}
+
+.reserva-campo textarea {
+  resize: vertical;
+}
+
+.reserva-campo input:focus,
+.reserva-campo select:focus,
+.reserva-campo textarea:focus {
+  border-color: #8faed9;
+}
+
+.reserva-campo .reserva-invalido {
+  border-color: #e8aaaa;
+  background: #fdf3f3;
+}
+
+.reserva-error {
+  color: #a85a5a;
+  font-size: 0.85rem;
+}
+
+.reserva-fila {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.reserva-fallo {
+  padding: 10px 14px;
+  background: #f8d9d9;
+  border: 2px solid #e8aaaa;
+  border-radius: 10px;
+  color: #a85a5a;
+}
+
 .reserva-form button[type='submit'],
 .reserva-exito button {
   padding: 14px 24px;
@@ -30,4 +94,95 @@
   transform: translateY(-3px);
   background: var(--primario-oscuro);
   box-shadow: 0 8px 20px rgba(232, 116, 59, 0.4);
+}
+
+.reserva-form button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reserva-exito {
+  background: #cdeed6;
+  border: 2px solid #a8d9b5;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.reserva-exito h3 {
+  margin: 0 0 8px;
+  color: #4d8a60;
+}
+
+.reserva-exito > p {
+  margin: 0 0 16px;
+}
+
+.reserva-resumen {
+  margin-bottom: 18px;
+  padding: 14px 20px;
+  background: #ffffff;
+  border: 2px solid #e6cdee;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(150, 120, 170, 0.2);
+}
+
+.reserva-resumen p {
+  margin: 6px 0;
+  word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .reserva-form,
+  .reserva-exito {
+    padding: 16px;
+  }
+
+  .reserva-fila {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reserva-sim {
+  margin-top: 20px;
+  padding: 16px 18px;
+  background: var(--amarillo);
+  border: 2px dashed #e3c068;
+  border-radius: 14px;
+}
+
+.reserva-sim p {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+}
+
+.reserva-sim-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reserva-sim-botones button {
+  padding: 7px 14px;
+  background: #fff;
+  border: 2px solid #f2d68f;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--texto);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.reserva-sim-botones button:hover {
+  border-color: #e3c068;
+}
+
+.reserva-sim-botones .reserva-sim-activo {
+  background: var(--texto);
+  border-color: var(--texto);
+  color: #fff;
 }
