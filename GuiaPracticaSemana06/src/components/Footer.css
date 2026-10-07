@@ -1,0 +1,57 @@
+.pie {
+  margin-top: 40px;
+  padding: 40px 0 0;
+  background: var(--texto);
+  color: #d9dbe6;
+}
+
+.pie-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+}
+
+.pie-logo {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.pie-texto {
+  margin: 0;
+  max-width: 340px;
+  font-size: 0.9rem;
+}
+
+.pie h4 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.pie a,
+.pie span {
+  display: block;
+  margin: 6px 0;
+  color: #d9dbe6;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.pie a:hover {
+  color: var(--naranja);
+}
+
+.pie-copy {
+  margin: 30px 0 0;
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+  .pie-grid {
+    grid-template-columns: 1fr;
+  }
+}
