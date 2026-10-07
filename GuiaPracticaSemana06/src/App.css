@@ -11,7 +11,8 @@
 .contenedor {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .imagen-fallo {
