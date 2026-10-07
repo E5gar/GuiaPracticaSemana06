@@ -1,0 +1,92 @@
+.guia-card {
+  background: #ffffff;
+  border: 2px solid #e6cdee;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(150, 120, 170, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.guia-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(130, 140, 180, 0.25);
+}
+
+.guia-card-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #3a3a4a;
+}
+
+.guia-card-color-0 {
+  background: #ffd9b8;
+  border: 2px solid #f2bd92;
+}
+
+.guia-card-color-1 {
+  background: #cddcf2;
+  border: 2px solid #aac0e3;
+}
+
+.guia-card-color-2 {
+  background: #cdeed6;
+  border: 2px solid #a8d9b5;
+}
+
+.guia-card-color-3 {
+  background: #ffe9b8;
+  border: 2px solid #f2d68f;
+}
+
+.guia-card h3 {
+  margin: 14px 0 2px;
+  color: #8c63a0;
+}
+
+.guia-card-usuario {
+  margin: 0 0 12px;
+  color: #5c5c6e;
+  font-size: 0.9rem;
+}
+
+.guia-card-datos {
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 12px 0 0;
+  list-style: none;
+  border-top: 2px solid #e6cdee;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.guia-card-datos li {
+  margin: 6px 0;
+  word-break: break-word;
+}
+
+.guia-card-boton {
+  margin-top: auto;
+  padding: 10px 18px;
+  background: #cdeed6;
+  border: 2px solid #a8d9b5;
+  border-radius: 10px;
+  color: #3a3a4a;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.guia-card-boton:hover {
+  transform: translateY(-2px);
+  border-color: #82c493;
+}
