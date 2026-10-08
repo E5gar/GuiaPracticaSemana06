@@ -36,12 +36,12 @@ jobs:
       - name: Router
         working-directory: ./GuiaPracticaSemana06
         run: |
-          sed -i 's/<BrowserRouter>/<BrowserRouter basename="\/GitHubProyecto">/g' src/main.jsx
+          sed -i 's/<BrowserRouter>/<BrowserRouter basename="\/GuiaPracticaSemana06">/g' src/main.jsx
 
       - name: Compilar
         working-directory: ./GuiaPracticaSemana06
         run: |
-          npx vite build --base=/GitHubProyecto/
+          npx vite build --base=/GuiaPracticaSemana06/
           cp dist/index.html dist/404.html
 
       - name: Setup Pages
