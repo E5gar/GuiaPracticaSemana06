@@ -1,0 +1,57 @@
+name: Deploy GitHub
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Dependencias
+        working-directory: ./GuiaPracticaSemana06
+        run: npm install
+
+      - name: Router
+        working-directory: ./GuiaPracticaSemana06
+        run: |
+          sed -i 's/<BrowserRouter>/<BrowserRouter basename="\/GitHubProyecto">/g' src/main.jsx
+
+      - name: Compilar
+        working-directory: ./GuiaPracticaSemana06
+        run: |
+          npx vite build --base=/GitHubProyecto/
+          cp dist/index.html dist/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Artefacto
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './GuiaPracticaSemana06/dist'
+
+      - name: Desplegar
+        id: deployment
+        uses: actions/deploy-pages@v4
